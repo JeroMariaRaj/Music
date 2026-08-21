@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="ms-10 bg-red-500 w-10 h-10"></div>
+<script>
+setTimeout(() => {
+    const el = document.querySelector('div');
+    console.log(window.getComputedStyle(el).marginInlineStart);
+}, 1000);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Symphony Music Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#b91c1c',
+                        secondary: '#eab308',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+    
+    <div class="flex min-h-screen">
+        <!-- Left Side: Colorful Image -->
+        <div class="hidden lg:flex lg:w-1/2 relative items-center justify-center">
+            <img src="assets/images/acoustic_guitar.jpg" alt="Music" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-br from-red-900/90 to-purple-900/90 mix-blend-multiply"></div>
+            <div class="relative z-10 p-12 text-center text-white">
+                <h2 class="text-5xl font-serif font-bold mb-6">Start Your Journey</h2>
+                <p class="text-xl text-red-100 max-w-md mx-auto leading-relaxed">Join a vibrant community of musicians. Discover your talent and refine your skills today.</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12 lg:p-16 relative bg-gray-50 dark:bg-gray-900">
+            <!-- Toggles (Absolute top right) -->
+            <div class="absolute top-4 end-4 sm:top-8 sm:end-8 z-50 flex items-center gap-5">
+                <button id="rtlToggle" class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors font-bold text-sm" title="Toggle RTL">
+                    RTL
+                </button>
+                <button id="themeToggle" class="text-gray-500 hover:text-primary transition-colors">
+                    <i class="fas fa-moon text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="w-full max-w-2xl">
+                <!-- Logo -->
+                <div class="text-center mb-8">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-3xl font-serif font-bold text-gray-900 dark:text-white mb-2 hover:text-primary transition-colors">
+                        <i class="fas fa-music text-primary"></i>
+                        <span>Symphony</span>
+                    </a>
+                    <h1 class="text-2xl font-bold mt-4 text-gray-900 dark:text-white">Create an Account</h1>
+                    <p class="text-gray-500 mt-2">Join us and start learning your favorite instrument.</p>
+                </div>
+
+                <form id="register-form" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 shadow-sm" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 shadow-sm" placeholder="john@example.com" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 shadow-sm" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium mb-2">Password</label>
+                            <input type="password" id="password" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 shadow-sm" placeholder="••••••••" required>
+                        </div>
+                        <div>
+                            <label for="instrument" class="block text-sm font-medium mb-2">Primary Instrument</label>
+                            <select id="instrument" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 shadow-sm" required>
+                                <option value="" disabled selected>Select an instrument...</option>
+                                <option value="piano">Piano</option>
+                                <option value="guitar">Guitar</option>
+                                <option value="violin">Violin</option>
+                                <option value="drums">Drums</option>
+                                <option value="vocals">Vocals</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="age-group" class="block text-sm font-medium mb-2">Age Group</label>
+                            <select id="age-group" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 shadow-sm" required>
+                                <option value="" disabled selected>Select age group...</option>
+                                <option value="child">Child (Under 12)</option>
+                                <option value="teen">Teen (13-17)</option>
+                                <option value="adult">Adult (18+)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start pt-2">
+                        <div class="flex items-center h-5">
+                            <input id="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-800 dark:border-gray-700" required>
+                        </div>
+                        <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree to the <a href="#" class="text-primary hover:underline">Terms and Conditions</a></label>
+                    </div>
+                    
+                    <button type="submit" class="w-full text-white bg-primary hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-3 text-center transition-colors shadow-md mt-4">Create Account</button>
+                </form>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Already have an account? <a href="login.html" class="text-primary hover:underline font-medium">Log in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/main.js?v=9"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

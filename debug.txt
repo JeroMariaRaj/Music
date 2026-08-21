@@ -1,0 +1,133 @@
+<div id="section-overview" class="dashboard-section block">
+<div class="mb-6">
+                <h1 class="text-2xl font-bold">Welcome back, Student!</h1>
+                <p class="text-gray-500 dark:text-gray-400 mt-1">Here is your learning progress for this week.</p>
+            </div>
+            
+            <!-- Stat Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transition-colors">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Total Lessons</p>
+                            <p class="text-3xl font-bold mt-1">24</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center text-xl">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transition-colors">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Hours Practiced</p>
+                            <p class="text-3xl font-bold mt-1">16.5</p>
+                        </div>
+                        <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-full flex items-center justify-center text-xl">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transition-colors">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Next Class</p>
+                            <p id="nextClassDate" class="text-lg font-bold mt-1">Tomorrow, 4 PM</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-50 text-green-600 rounded-full flex items-center justify-center text-xl">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Course Progress -->
+                <div class="lg:col-span-2 bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transition-colors">
+                    <h2 class="text-lg font-bold mb-4">Course Progress</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Piano Masterclass - Level 2</span>
+                                <span class="text-sm font-medium">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Music Theory - Basics</span>
+                                <span class="text-sm font-medium">40%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Schedule -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 transition-colors">
+                    <h2 class="text-lg font-bold mb-4">Upcoming Schedule</h2>
+                    <div class="space-y-5">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 text-center dynamic-date"><span class="block text-sm font-bold text-gray-900 dark:text-white dynamic-month">Oct</span><span class="block text-xl font-bold text-blue-600 dynamic-day">24</span></div>
+                            <div class="ms-4 border-s-2 border-blue-600 ps-4">
+                                <h3 class="text-sm font-bold">Piano Lesson</h3>
+                                <p class="text-xs text-gray-500 mt-1">4:00 PM - 5:00 PM</p>
+                                <p class="text-xs text-gray-500 mt-1"><i class="fas fa-map-marker-alt me-1"></i>Room A / Sarah</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 text-center dynamic-date"><span class="block text-sm font-bold text-gray-900 dark:text-white dynamic-month">Oct</span><span class="block text-xl font-bold text-purple-600 dynamic-day">26</span></div>
+                            <div class="ms-4 border-s-2 border-purple-600 ps-4">
+                                <h3 class="text-sm font-bold">Music Theory</h3>
+                                <p class="text-xs text-gray-500 mt-1">2:00 PM - 3:30 PM</p>
+                                <p class="text-xs text-gray-500 mt-1"><i class="fas fa-video me-1"></i>Online Zoom Link</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Payments Table -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden transition-colors">
+                <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                    <h2 class="text-lg font-bold">Recent Payments</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-start">
+                        <thead class="text-xs text-gray-500 bg-gray-50 dark:bg-gray-700 dark:text-gray-400 uppercase">
+                            <tr>
+                                <th class="px-6 py-3">Invoice ID</th>
+                                <th class="px-6 py-3">Description</th>
+                                <th class="px-6 py-3">Date</th>
+                                <th class="px-6 py-3">Amount</th>
+                                <th class="px-6 py-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                <td class="px-6 py-4 font-medium">#INV-0012</td>
+                                <td class="px-6 py-4">Piano Masterclass (October)</td>
+                                <td class="px-6 py-4">Oct 01, 2026</td>
+                                <td class="px-6 py-4">$120.00</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-md dark:bg-green-900/30 dark:text-green-400">Paid</span></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                <td class="px-6 py-4 font-medium">#INV-0013</td>
+                                <td class="px-6 py-4">Sheet Music Bundle</td>
+                                <td class="px-6 py-4">Oct 15, 2026</td>
+                                <td class="px-6 py-4">$25.00</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-md dark:bg-green-900/30 dark:text-green-400">Paid</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        
+            </div>
+            <!-- Placeholder Sections -->

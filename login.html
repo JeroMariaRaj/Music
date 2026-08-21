@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Symphony Music Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#b91c1c',
+                        secondary: '#eab308',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+    
+    <div class="flex min-h-screen">
+        <!-- Left Side: Colorful Image -->
+        <div class="hidden lg:flex lg:w-1/2 relative items-center justify-center">
+            <img src="assets/images/piano_mastery.jpg" alt="Music" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-br from-red-900/90 to-purple-900/90 mix-blend-multiply"></div>
+            <div class="relative z-10 p-12 text-center text-white">
+                <h2 class="text-5xl font-serif font-bold mb-6">Welcome to Symphony</h2>
+                <p class="text-xl text-red-100 max-w-md mx-auto leading-relaxed">Unleash your musical potential with world-class instructors and state-of-the-art facilities.</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12 lg:p-24 relative bg-gray-50 dark:bg-gray-900">
+            <!-- Toggles (Absolute top right) -->
+            <div class="absolute top-4 end-4 sm:top-8 sm:end-8 z-50 flex items-center gap-5">
+                <button id="rtlToggle" class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors font-bold text-sm" title="Toggle RTL">
+                    RTL
+                </button>
+                <button id="themeToggle" class="text-gray-500 hover:text-primary transition-colors">
+                    <i class="fas fa-moon text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="w-full max-w-md">
+                <!-- Logo -->
+                <div class="text-center mb-10">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-3xl font-serif font-bold text-gray-900 dark:text-white mb-2 hover:text-primary transition-colors">
+                        <i class="fas fa-music text-primary"></i>
+                        <span>Symphony</span>
+                    </a>
+                    <h1 class="text-2xl font-bold mt-6 text-gray-900 dark:text-white">Sign In</h1>
+                    <p class="text-gray-500 mt-2">Welcome back! Please enter your details.</p>
+                </div>
+
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 ps-3 flex items-center pointer-events-none text-gray-500">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <input type="email" id="email" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full ps-10 p-2.5 transition-colors shadow-sm" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="password" class="block text-sm font-medium">Password</label>
+                            <a href="#" class="text-sm text-primary hover:underline font-medium">Forgot password?</a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 ps-3 flex items-center pointer-events-none text-gray-500">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <input type="password" id="password" class="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full ps-10 p-2.5 transition-colors shadow-sm" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input id="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-800 dark:border-gray-700 transition-colors">
+                        <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                    </div>
+                    
+                    <button type="submit" class="w-full text-white bg-primary hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-3 text-center transition-colors shadow-md">Sign in</button>
+                </form>
+                
+                <div class="mt-6 flex items-center justify-center gap-4">
+                    <div class="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
+                    <span class="text-sm text-gray-500 dark:text-gray-400">or sign in with</span>
+                    <div class="h-px bg-gray-200 dark:bg-gray-700 flex-grow"></div>
+                </div>
+                
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <button type="button" class="flex items-center justify-center w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-google text-red-500 me-2"></i> Google
+                    </button>
+                    <button type="button" class="flex items-center justify-center w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg shadow-sm bg-white dark:bg-gray-800 text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-apple text-gray-900 dark:text-white me-2"></i> Apple
+                    </button>
+                </div>
+                
+                <div class="mt-8 text-sm text-center text-gray-500 dark:text-gray-400 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm">
+                    <p class="font-medium text-gray-900 dark:text-gray-200 mb-1">Demo Credentials:</p>
+                    <p>Student: student@musicacademy.com / Student@123</p>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Don't have an account? <a href="register.html" class="text-primary hover:underline font-medium">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/main.js?v=9"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

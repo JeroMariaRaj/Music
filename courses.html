@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Music Academy - Courses</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#b91c1c',
+                        secondary: '#eab308',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-serif { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm border-b border-gray-100 dark:border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-serif font-bold text-primary">
+                <i class="fas fa-music"></i>
+                <span>Symphony</span>
+            </a>
+            <nav class="hidden lg:flex gap-6 items-center font-medium text-sm">
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-primary transition-colors font-medium h-10">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-down text-[10px]"></i>
+                    </button>
+                    <div class="absolute start-0 top-full pt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-100 dark:border-gray-700 overflow-hidden">
+                            <a href="index.html" class="block px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary transition-colors">Home 1 - Academy</a>
+                            <a href="home-2.html" class="block px-4 py-2.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary transition-colors">Home 2 - Digital Agency</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="about.html" class="hover:text-primary transition-colors">About</a>
+                <a href="courses.html" class="hover:text-primary transition-colors">Courses</a>
+                <a href="faculty.html" class="hover:text-primary transition-colors">Faculty</a>
+                <a href="schedule.html" class="hover:text-primary transition-colors">Schedule</a>
+                <a href="fees.html" class="hover:text-primary transition-colors">Fees</a>
+                <a href="performances.html" class="hover:text-primary transition-colors">Performances</a>
+                <a href="blog.html" class="hover:text-primary transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+            </nav>
+                        <div class="flex items-center gap-5 lg:gap-6">
+                <button id="rtlToggle" class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors font-bold text-sm" title="Toggle RTL">RTL</button>
+                <button id="themeToggle" class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-white transition-colors" title="Toggle Theme">
+                    <i class="fas fa-moon text-xl"></i>
+                </button>
+                
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="login.html" class="text-primary border-2 border-primary hover:bg-primary hover:text-white transition-colors font-bold px-6 py-1.5 rounded-full">Login</a>
+                    <button class="bg-primary hover:bg-red-800 text-white px-5 py-2 rounded-full font-medium transition-colors book-trial-btn">
+                        Book Free Trial
+                    </button>
+                </div>
+                
+                <button id="mobile-menu-btn" class="lg:hidden text-2xl text-gray-700 dark:text-gray-300 ms-1">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
+        <div class="px-4 pt-2 pb-4 space-y-1">
+            <details class="group">
+    <summary class="flex justify-between items-center px-3 py-2 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+        <span>Home</span>
+        <i class="fas fa-chevron-down text-xs transition-transform group-open:rotate-180"></i>
+    </summary>
+    <div class="ps-4 pe-2 py-1 space-y-1 border-s-2 border-gray-100 dark:border-gray-700 ms-4 mt-1 mb-2">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-primary transition-colors">Home 1 - Academy</a>
+        <a href="home-2.html" class="block px-3 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-primary transition-colors">Home 2 - Digital Agency</a>
+    </div>
+</details>
+            <a href="about.html" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary">About</a>
+            <a href="courses.html" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary">Courses</a>
+            <a href="faculty.html" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary">Faculty</a>
+            <a href="schedule.html" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary">Schedule</a>
+            <a href="fees.html" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary">Fees</a>
+            <a href="performances.html" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary">Performances</a>
+            <a href="blog.html" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary">Blog</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary">Contact</a>
+                    </div>
+        <div class="px-6 py-5 border-t border-gray-100 dark:border-gray-800 flex flex-col gap-4 text-center">
+            <a href="login.html" class="text-primary border-2 border-primary hover:bg-primary hover:text-white transition-colors font-bold px-5 py-2.5 rounded-full block w-full">Login</a>
+            <button class="bg-primary hover:bg-red-800 text-white px-5 py-3 rounded-full font-medium transition-colors w-full book-trial-btn">
+                Book Free Trial
+            </button>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+    <!-- Page Header -->
+    <section class="py-16 bg-gray-900 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold font-serif mb-4">Our Courses</h1>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto">Discover a world of musical possibilities. From classical foundations to contemporary techniques, find the perfect course to ignite your passion.</p>
+        </div>
+    </section>
+    
+    <div class="py-12">
+        <div class="container mx-auto px-4">
+            
+            <div id="courseFilters" class="flex justify-center flex-wrap gap-4 mb-12">
+                <button class="filter-btn active bg-primary text-white hover:bg-red-800 px-6 py-2 rounded-full shadow-sm transition" data-filter="all">All</button>
+                <button class="filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 px-6 py-2 rounded-full shadow-sm transition border border-gray-100 dark:border-gray-700" data-filter="guitar">Guitar</button>
+                <button class="filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 px-6 py-2 rounded-full shadow-sm transition border border-gray-100 dark:border-gray-700" data-filter="piano">Piano</button>
+                <button class="filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 px-6 py-2 rounded-full shadow-sm transition border border-gray-100 dark:border-gray-700" data-filter="violin">Violin</button>
+                <button class="filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 px-6 py-2 rounded-full shadow-sm transition border border-gray-100 dark:border-gray-700" data-filter="vocal">Vocal</button>
+                <button class="filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 px-6 py-2 rounded-full shadow-sm transition border border-gray-100 dark:border-gray-700" data-filter="tabla">Tabla</button>
+                <button class="filter-btn bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 px-6 py-2 rounded-full shadow-sm transition border border-gray-100 dark:border-gray-700" data-filter="theory">Theory</button>
+            </div>
+
+            <div id="course-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition duration-300" data-category="guitar">
+                    <img src="assets/images/acoustic_guitar.jpg" alt="Guitar" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider bg-orange-100 px-2 py-1 rounded">Guitar</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2"><a href="course-guitar.html" class="hover:text-primary">Acoustic Fundamentals</a></h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-2">Learn chords, strumming patterns, and your favorite songs in a fun, interactive environment.</p>
+                        <div class="flex justify-between items-center border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <span class="text-primary font-bold">$120/mo</span>
+                            <a href="course-guitar.html" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary font-medium">View Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition duration-300" data-category="piano">
+                    <img src="assets/images/piano_mastery.jpg" alt="Piano" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider bg-orange-100 px-2 py-1 rounded">Piano</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2"><a href="course-piano.html" class="hover:text-primary">Classical Piano Mastery</a></h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-2">Develop technical proficiency and expressive performance skills with timeless classical repertoire.</p>
+                        <div class="flex justify-between items-center border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <span class="text-primary font-bold">$150/mo</span>
+                            <a href="course-piano.html" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary font-medium">View Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition duration-300" data-category="violin">
+                    <img src="assets/images/violin_course.jpg" alt="Violin" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider bg-orange-100 px-2 py-1 rounded">Violin</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2"><a href="course-violin.html" class="hover:text-primary">Violin for Beginners</a></h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-2">Start your journey with proper posture, bowing techniques, and basic scales.</p>
+                        <div class="flex justify-between items-center border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <span class="text-primary font-bold">$130/mo</span>
+                            <a href="course-violin.html" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary font-medium">View Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition duration-300" data-category="vocal">
+                    <img src="assets/images/vocal_training.jpg" alt="Vocal" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider bg-orange-100 px-2 py-1 rounded">Vocal</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2"><a href="course-vocals.html" class="hover:text-primary">Contemporary Vocals</a></h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-2">Improve breath control, pitch, and performance skills across modern genres.</p>
+                        <div class="flex justify-between items-center border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <span class="text-primary font-bold">$110/mo</span>
+                            <a href="course-vocals.html" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary font-medium">View Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition duration-300" data-category="tabla">
+                    <img src="assets/images/tabla_course.jpg" alt="Tabla" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider bg-orange-100 px-2 py-1 rounded">Tabla</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2"><a href="course-tabla.html" class="hover:text-primary">Rhythm of Tabla</a></h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-2">Master traditional beats and complex rhythmic cycles in classical Indian music.</p>
+                        <div class="flex justify-between items-center border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <span class="text-primary font-bold">$100/mo</span>
+                            <a href="course-tabla.html" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary font-medium">View Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition duration-300" data-category="theory">
+                    <img src="assets/images/music_theory.jpg" alt="Music Theory" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-wider bg-orange-100 px-2 py-1 rounded">Theory</span>
+                        <h3 class="text-xl font-bold mt-3 mb-2"><a href="course-theory.html" class="hover:text-primary">Music Theory</a></h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-2">Understand the building blocks of music, from scales and chords to advanced harmony.</p>
+                        <div class="flex justify-between items-center border-t border-gray-100 dark:border-gray-700 pt-4">
+                            <span class="text-primary font-bold">$89/mo</span>
+                            <a href="course-theory.html" class="text-sm text-gray-500 hover:text-primary font-medium">View Details <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 border-t border-gray-800">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div>
+                <a href="index.html" class="flex items-center gap-2 text-2xl font-serif font-bold text-white mb-6">
+                    <i class="fas fa-music text-primary"></i>
+                    <span>Symphony</span>
+                </a>
+                <p class="mb-6 text-sm text-gray-400">Empowering musicians of all ages to discover their passion, refine their skills, and share their art with the world.</p>
+                <div class="flex gap-4">
+                    <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 text-lg">Quick Links</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+                    <li><a href="courses.html" class="hover:text-primary transition-colors">Our Courses</a></li>
+                    <li><a href="faculty.html" class="hover:text-primary transition-colors">Faculty Members</a></li>
+                    <li><a href="schedule.html" class="hover:text-primary transition-colors">Class Schedule</a></li>
+                    <li><a href="contact.html" class="hover:text-primary transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 text-lg">Programs</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="course-piano.html" class="hover:text-primary transition-colors">Piano Lessons</a></li>
+                    <li><a href="course-guitar.html" class="hover:text-primary transition-colors">Guitar Lessons</a></li>
+                    <li><a href="course-vocals.html" class="hover:text-primary transition-colors">Vocal Training</a></li>
+                    <li><a href="course-violin.html" class="hover:text-primary transition-colors">Violin Lessons</a></li>
+                    <li><a href="course-tabla.html" class="hover:text-primary transition-colors">Tabla & Percussion</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 text-lg">Contact Info</h4>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                        <span>123 Melody Lane, Harmony City, HC 90210</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-primary"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                                          <li class="flex items-center gap-3">
+                          <i class="fas fa-envelope text-primary"></i>
+                          <span>info@symphonyacademy.com</span>
+                      </li>
+                  </ul>
+              </div>
+              <div>
+                  <h4 class="text-white font-bold mb-6 text-lg">Newsletter</h4>
+                  <p class="text-sm text-gray-400 mb-4">Subscribe to get the latest updates and offers.</p>
+                  <form class="subscribe-form flex flex-col gap-3">
+                      <input type="email" placeholder="Email address" required class="bg-gray-800 border border-gray-700 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-primary w-full transition-colors placeholder-gray-500">
+                      <button type="submit" class="bg-primary hover:bg-red-800 text-white rounded-lg px-4 py-2.5 text-sm font-bold transition-colors w-full">Subscribe</button>
+                  </form>
+              </div>
+        </div>
+        <div class="container mx-auto px-4 mt-12 pt-8 border-t border-gray-800 text-sm text-center text-gray-500">
+            &copy; 2026 Symphony Music Academy. All rights reserved.
+        </div>
+    </footer>
+
+
+    
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js?v=9"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

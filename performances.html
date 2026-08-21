@@ -208,7 +208,7 @@
     <div id="trialModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="document.getElementById('trialModal').classList.add('hidden')"></div>
         <div class="relative bg-white dark:bg-gray-900 w-full max-w-md p-8 rounded-2xl shadow-2xl m-4">
-            <button class="absolute top-4 end-4 text-gray-500 hover:text-gray-800 dark:hover:text-white" onclick="document.getElementById('trialModal').classList.add('hidden')">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:hover:text-white" onclick="document.getElementById('trialModal').classList.add('hidden')">
                 <i class="fas fa-times text-xl"></i>
             </button>
             <h3 class="text-2xl font-bold font-serif mb-2 text-gray-900 dark:text-white">Book Free Trial</h3>
@@ -220,12 +220,24 @@
                 <div>
                     <input type="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" required>
                 </div>
+                <div>
+                    <select class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option value="">Select Instrument of Interest</option>
+                        <option value="piano">Piano</option>
+                        <option value="guitar">Guitar</option>
+                        <option value="vocals">Vocals</option>
+                        <option value="violin">Violin</option>
+                        <option value="drums">Drums</option>
+                    </select>
+                </div>
                 <button type="button" onclick="alert('Trial booked! We will contact you soon.'); document.getElementById('trialModal').classList.add('hidden');" class="w-full bg-primary hover:bg-red-800 text-white font-bold py-3 rounded-lg transition-colors">
                     Submit Request
                 </button>
             </form>
         </div>
     </div>
+
+
 
     <script src="assets/js/data.js"></script>
     <script src="assets/js/main.js?v=9"></script>
@@ -306,6 +318,7 @@
     </script>
 </body>
 </html>
+
 
 
 
